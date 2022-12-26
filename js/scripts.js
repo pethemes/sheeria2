@@ -8,7 +8,9 @@
 
     })
 
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, DrawSVGPlugin);
+
+
 
     var keys = {
         37: 1,
@@ -424,7 +426,11 @@
             height: winHeight - secHeight
         });
 
-        $('.mi-bg:last-child').addClass('index_' + (serviceLength - 1))
+        $('.mi-bg:last-child').addClass('index_' + (serviceLength - 1));
+
+        var mobileQuery = window.matchMedia('(max-width: 450px)');
+
+
 
         servicesSlider.on('slideNextTransitionStart', function () {
 
@@ -432,19 +438,50 @@
                 findBg = '.index_' + activeIndex,
                 nextBg = '.index_' + (activeIndex + 1);
 
-            gsap.to(findBg, {
-                yPercent: -90,
-                scale: 2.5,
-                duration: 2
+            if (mobileQuery.matches) {
 
-            })
 
-            gsap.to(nextBg, {
-                yPercent: -20,
-                scale: 1,
-                duration: 2
+                gsap.to(nextBg, {
+                    yPercent: -50,
+                    scale: 0.3,
+                    duration: 1
+                })
 
-            })
+
+                gsap.to(findBg, {
+                    yPercent: -80,
+                    scale: 0.3,
+                    duration: 1,
+                    onComplete: function () {
+
+                        gsap.to(findBg, {
+                            scale: 0.7
+                        })
+
+
+                    }
+
+                })
+
+
+            } else {
+
+                gsap.to(findBg, {
+                    yPercent: -90,
+                    scale: 2.5,
+                    duration: 2
+
+                })
+
+                gsap.to(nextBg, {
+                    yPercent: -20,
+                    scale: 1,
+                    duration: 2
+
+                })
+            }
+
+
 
             $('.sf-curr').text('0' + (activeIndex + 1))
 
@@ -457,18 +494,40 @@
                 prevBg = '.index_' + (activeIndex + 2);
 
 
-            gsap.to(findBg, {
-                yPercent: -20,
-                scale: 1,
-                duration: 2
+            if (mobileQuery.matches) {
 
-            })
+                gsap.to(findBg, {
+                    yPercent: -50,
+                    scale: 0.3,
+                    duration: 1,
 
-            gsap.to(prevBg, {
-                yPercent: 10,
-                scale: 1,
-                duration: 2
-            })
+                })
+
+                gsap.to(prevBg, {
+                    yPercent: -30,
+                    scale: 0.3,
+                    duration: 1
+                })
+
+            } else {
+
+                gsap.to(findBg, {
+                    yPercent: -20,
+                    scale: 1,
+                    duration: 2
+
+                })
+
+                gsap.to(prevBg, {
+                    yPercent: 10,
+                    scale: 1,
+                    duration: 2
+                })
+
+            }
+
+
+
 
             $('.sf-curr').text('0' + (activeIndex + 1))
 
@@ -495,20 +554,53 @@
                         findBg = '.index_' + activeIndex,
                         nextBg = '.index_' + (activeIndex + 1);
 
-                    gsap.to(nextBg, {
-                        yPercent: -20,
-                        scale: 1,
-                        duration: 2
-
-                    })
+                    if (mobileQuery.matches) {
 
 
-                    gsap.to(findBg, {
-                        yPercent: -90,
-                        scale: 2.5,
-                        duration: 2
 
-                    })
+                        gsap.to(nextBg, {
+                            yPercent: -50,
+                            scale: 0.3,
+                            duration: 1
+                        })
+
+
+                        gsap.to(findBg, {
+                            yPercent: -65,
+                            scale: 0.4,
+                            duration: 1,
+                            onComplete: function () {
+
+                                gsap.to(findBg, {
+                                    scale: 0.7
+                                })
+
+
+                            }
+
+                        })
+
+
+                    } else {
+
+                        gsap.to(nextBg, {
+                            yPercent: -20,
+                            scale: 1,
+                            duration: 2
+
+                        })
+
+
+                        gsap.to(findBg, {
+                            yPercent: -90,
+                            scale: 2.5,
+                            duration: 2
+
+                        })
+
+                    }
+
+
 
 
                 }
@@ -590,8 +682,16 @@
         var teamWrap = $('.team-wrapper'),
             sec = teamWrap.parents('.section');
 
+        var mobileQuery = window.matchMedia('(max-width: 450px)');
+        if (mobileQuery.matches) {
+            var perc = -92
+        } else {
+
+            var perc = -70
+        }
+
         gsap.to(teamWrap, {
-            xPercent: -90,
+            xPercent: perc,
             scrollTrigger: {
                 trigger: sec,
                 start: 'top top',
@@ -675,11 +775,11 @@
 
             })
             ilf.to(iconLineFirst, {
-                height: '30%',
+                height: '20%',
 
             });
             ilf.to(iconLineFirst, {
-                height: '100%',
+                height: '65%',
 
             })
 
@@ -694,7 +794,7 @@
             });
 
             ill.to(iconLineLast, {
-                height: '100%',
+                height: '60%',
 
             });
 
@@ -703,46 +803,26 @@
                 rightPos = (winSize - colSize) / 2;
 
             ScrollTrigger.create({
-                trigger: '.play-music-button',
-                start: 'bottom bottom-=5%',
-                end: 'bottom bottom',
+                trigger: 'body',
+                start: 'top+=10% top',
                 onEnter: function () {
 
-                    var parent = button.parents('.c-col-12'),
-                        butHeight = parent.outerHeight();
+                    $('.play-music-button').addClass('is-sticked')
 
-                    gsap.set(parent, {
-                        paddingBottom: butHeight
-                    })
-
-
-                    gsap.set('.play-music-button', {
-                        position: 'fixed',
-                        bottom: '5%',
-                        right: rightPos + 15
+                    gsap.to('#pmb-text', {
+                        opacity: 1
 
                     })
-
-
-
 
                 },
-                onEnterBack: function () {
+                onLeaveBack: function () {
+                    $('.play-music-button').removeClass('is-sticked')
 
-                    gsap.set('.play-music-button', {
-                        position: 'relative',
-                        bottom: 'unset',
-                        right: 'unset'
+                    gsap.to('#pmb-text', {
+                        opacity: 0,
+                        duration: .6
 
                     })
-
-                    var parent = button.parents('.c-col-12');
-
-                    gsap.set(parent, {
-                        paddingBottom: 0
-                    })
-
-
                 }
             })
 
@@ -750,7 +830,6 @@
 
                 var clicks = $(this).data('clicks'),
                     music = document.getElementById("pageMusic");
-
 
                 if (clicks) {
 
@@ -770,6 +849,112 @@
 
 
     }
+
+    function sheeriaVisionObj() {
+
+        var visObj = $('.sheeria-vision-objective'),
+            divs = visObj.children('div');
+
+        divs.prepend('<div class="svg-circle"><svg id="Layer_1" width="100%" height="100%" viewBox="0 0 100 100" xml:space="preserve"><circle fill="none" r="47.5%" cx="50%" cy="50%" stroke="#1BA2AD" stroke-width="0.2" /></svg></div>')
+
+        divs.prepend('<div class="svg-circle low"><svg id="Layer_1" width="100%" height="100%" viewBox="0 0 100 100" xml:space="preserve"><circle fill="none" r="47.5%" cx="50%" cy="50%" stroke="#000" stroke-width="0.2" /></svg></div>')
+
+
+        if (visObj.length) {
+
+            var circle = visObj.find('circle');
+
+            circle.each(function () {
+
+                let $this = $(this);
+
+                gsap.fromTo($this, {
+                    drawSVG: "0%"
+                }, {
+                    duration: 1.5,
+                    drawSVG: "100%",
+                    stagger: 0.1,
+
+                    scrollTrigger: {
+                        trigger: $this,
+                        scrub: 0.5,
+                        start: 'top bottom',
+                        end: 'top top'
+
+                    }
+
+                })
+
+            })
+
+
+
+
+        }
+
+
+
+    }
+    sheeriaVisionObj();
+
+    function sheeriaTextBox() {
+
+        var textbox = $('.sheeria-text-box');
+
+        if (textbox.length) {
+
+            textbox.each(function () {
+
+                let $this = $(this);
+
+                var mobileQuery = window.matchMedia('(max-width: 450px)');
+                if (mobileQuery.matches) {
+                    gsap.fromTo($this, {
+                        y: '-60%'
+                    }, {
+                        y: '0%',
+                        scrollTrigger: {
+                            trigger: $this,
+                            scrub: 1,
+                     
+
+                        }
+                    })
+
+
+                } else {
+
+                    gsap.fromTo($this, {
+                        y: '-35%'
+                    }, {
+                        y: '0%',
+                        scrollTrigger: {
+                            trigger: $this,
+                            scrub: 1,
+                   
+
+                        }
+                    })
+
+
+                }
+
+
+
+
+
+
+
+            })
+
+
+
+        }
+
+
+
+    }
+    sheeriaTextBox();
 
     function sheeriaTextScrollAnimations() {
 
@@ -1145,7 +1330,7 @@
     }
     sheeriaGreekTheater();
 
-     
+
 
     $(window).on('load', function () {
 
@@ -1179,26 +1364,17 @@
 
         setTimeout(function () {
 
-                sheeriaTeamCarousel();
-                sheeriaTextScrollAnimations();
-                sheeriaImageScrollAnimations();
-                sheeriaFooter();
+            sheeriaTeamCarousel();
+            sheeriaTextScrollAnimations();
+            sheeriaImageScrollAnimations();
+            sheeriaFooter();
 
-                ScrollTrigger.update();
-                ScrollTrigger.refresh();
-
-
+            ScrollTrigger.update();
+            ScrollTrigger.refresh();
 
 
-            }, 500)
-
-      
-
-
+        }, 500)
 
     })
-
-
-
 
 }(jQuery));
