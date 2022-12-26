@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
     <meta charset="utf-8">
     <!-- Page Title -->
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/swiper.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="css/rtl.css" rel="stylesheet">
     <!-- Favicons -->
     <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="apple-touch-icon" href="img/favicon.png" />
@@ -155,32 +157,32 @@
         <!--/ Fullscreen Menu -->
 
         <!-- Sheeria Intro -->
+        
         <div class="sheeria-intro">
 
-            <!--
-            <div class="intro-logo">
-                
-                <img src="img/site-logo.png">
-                
-            </div>
-            
-            <div class="intro-button">
-                
-                Discover Sheeria Group
-            
-            </div>
--->
 
-            <!-- Intro Video -->
+            <div class="intro-logo">
+
+                <img src="img/site-logo.png">
+
+            </div>
+
+            <div class="intro-button">
+
+                Discover Sheeria Group
+
+            </div>
+
+
+           
             <div class="intro-video">
-                <video controls autoplay muted playsinline>
-                    <source src="img/intro.webm" type="video/webm" />
+                <video webkit-playsinline="" playsinline="" preload="metadata" loop="" autoplay="" muted="" src="img/intro.mp4">
                     <source src="img/intro.mp4" type="video/mp4" />
-                    Sorry, your browser doesn't support embedded videos.
                 </video>
             </div>
-            <!--/ Intro Video -->
+       
         </div>
+
         <!-- Sheeria Intro -->
     </div>
     <!-- /Header -->
@@ -302,6 +304,31 @@
                             <!-- Landing Image -->
                         </div>
                         <!--/ Sheeria Landing -->
+
+                        <!-- Play Music Button -->
+                        <div class="play-music-button align-right">
+                            <!-- Page Music -->
+                            <audio id="pageMusic">
+                                <source src="img/music.mp3" type="audio/mpeg">
+                            </audio>
+                            <!--/ Page Music -->
+
+                            <!-- Pmb Text -->
+                            <div id="pmb-text">
+                                PLAY MUSIC. PLAY MUSIC. PLAY MUSIC. PLAY MUSIC.
+                            </div>
+                            <!--/ Pmb Text -->
+
+                            <!-- Pmb Icon -->
+                            <div class="pmb-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <!--/ Pmb Icon -->
+                        </div>
+                        <!--/ Play Music Button -->
+
                     </div>
                     <!--/ Column-12 -->
                 </div>
@@ -358,34 +385,6 @@
                         <!--/ S Button -->
                     </div>
                     <!--/ Column-9 -->
-
-                    <!-- Column-12 -->
-                    <div class="c-col-12">
-                        <!-- Play Music Button -->
-                        <div class="play-music-button align-right">
-                            <!-- Page Music -->
-                            <audio id="pageMusic">
-                                <source src="img/music.mp3" type="audio/mpeg">
-                            </audio>
-                            <!--/ Page Music -->
-
-                            <!-- Pmb Text -->
-                            <div id="pmb-text">
-                                PLAY MUSIC. PLAY MUSIC. PLAY MUSIC. PLAY MUSIC.
-                            </div>
-                            <!--/ Pmb Text -->
-
-                            <!-- Pmb Icon -->
-                            <div class="pmb-icon">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <!--/ Pmb Icon -->
-                        </div>
-                        <!--/ Play Music Button -->
-                    </div>
-                    <!--/ Column-12 -->
 
                     <!-- Space -->
                     <span class="empty-space" style="height: 100px"></span>
@@ -636,7 +635,7 @@
                 <!--/ Wrapper -->
 
                 <!-- Wrapper Full -->
-                <div class="wrapper-full">
+                <div class="wrapper-full no-margin">
                     <!-- Column 12 -->
                     <div class="c-col-12">
                         <!-- Team Wrapper -->
@@ -760,222 +759,217 @@
                         <!--/ Team Wrapper -->
                     </div>
                     <!--/ Column 12 -->
+                </div>
+                <!--/ Wrapper Full -->
+            </div>
+            <!--/ Section -->
+            <!-- Section -->
+            <div class="section">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Space -->
+                    <span class="empty-space hide-mobile" style="height: 75px"></span>
+                    <!--/ Space -->
+
+                    <!-- Column 6 -->
+                    <div class="c-col-6">
+                        <!-- Sheeria Title -->
+                        <div class="sheeria-title">
+                            <h5 class="has-anim" data-anim="charsUp">
+                                Our Partners
+                            </h5>
+                        </div>
+                        <!--/ Sheeria Title -->
+
+                        <!-- Text Wrapper -->
+                        <div class="text-wrapper">
+                            <!-- Text Wrapper Head -->
+                            <h1 class="has-anim" data-anim="linesUp">Relationships
+                                <br>Based On Trust
+                            </h1>
+                            <!--/ Text Wrapper Head -->
+                        </div>
+                        <!--/ Text Wrapper -->
+
+                        <!-- Text Wrapper -->
+                        <div class="text-wrapper">
+                            <!-- Text Wrapper Content -->
+                            <p class="has-anim" data-anim="linesUp">We help design products and services that
+                                <br>improve the daily lives of humans, while
+                                <br>meeting brand and business goals.
+                            </p>
+                            <!--/ Text Wrapper Content -->
+                        </div>
+                        <!--/ Text Wrapper -->
+                    </div>
+                    <!--/ Column 6 -->
+
+                    <!-- Column 6 -->
+                    <div class="c-col-6">
+                        <!-- Single Image -->
+                        <div class="single-image align-right">
+                            <img cla src="img/partners-logo.png">
+                        </div>
+                        <!--/ Single Image -->
+
+                        <!-- Single Image -->
+                        <div class="single-image align-right" style="transform: translateY(-35px)">
+                            <img class="has-anim" data-anim="writeText" src="img/partners.png">
+                        </div>
+                        <!--/ Single Image -->
+                    </div>
+                    <!--/ Column 6 -->
 
                     <!-- Column 12 -->
                     <div class="c-col-12">
+                        <!-- Sheeria Clients -->
+                        <div class="sheeria-clients">
+                            <!-- Clients Wrapper -->
+                            <div class="clients-wrap">
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl1.png">
+                                        <img class="light-logo" src="img/cl1-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
 
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl2.png">
+                                        <img class="light-logo" src="img/cl2-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl3.png">
+                                        <img class="light-logo" src="img/cl3-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link  -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl4.png">
+                                        <img class="light-logo" src="img/cl4-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl5.png">
+                                        <img class="light-logo" src="img/cl5-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl6.png">
+                                        <img class="light-logo" src="img/cl6-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl7.png">
+                                        <img class="light-logo" src="img/cl7-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl8.png">
+                                        <img class="light-logo" src="img/cl8-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl9.png">
+                                        <img class="light-logo" src="img/cl9-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+
+                                <!-- Client -->
+                                <div class="client">
+                                    <!-- Client Link -->
+                                    <a href="#">
+                                        <!-- Client Logos -->
+                                        <img class="dark-logo" src="img/cl10.png">
+                                        <img class="light-logo" src="img/cl10-w.png">
+                                        <!--/ Client Logos -->
+                                    </a>
+                                    <!--/ Client Link -->
+                                </div>
+                                <!--/ Client -->
+                            </div>
+                            <!--/ Clients Wrapper -->
+                        </div>
+                        <!--/ Sheeria Client -->
                     </div>
                     <!--/ Column 12 -->
                 </div>
-                <!--/ Wrapper Full -->
+                <!--/ Wrapper -->
             </div>
             <!--/ Section -->
         </div>
         <!--/ Page Content -->
 
-        <!-- Section -->
-        <div class="section">
-            <!-- Wrapper -->
-            <div class="wrapper">
-                <!-- Space -->
-                <span class="empty-space" style="height: 75px"></span>
-                <!--/ Space -->
 
-                <!-- Column 6 -->
-                <div class="c-col-6">
-                    <!-- Sheeria Title -->
-                    <div class="sheeria-title">
-                        <h5 class="has-anim" data-anim="charsUp">
-                            Our Partners
-                        </h5>
-                    </div>
-                    <!--/ Sheeria Title -->
-
-                    <!-- Text Wrapper -->
-                    <div class="text-wrapper">
-                        <!-- Text Wrapper Head -->
-                        <h1 class="has-anim" data-anim="linesUp">Relationships
-                            <br>Based On Trust
-                        </h1>
-                        <!--/ Text Wrapper Head -->
-                    </div>
-                    <!--/ Text Wrapper -->
-
-                    <!-- Text Wrapper -->
-                    <div class="text-wrapper">
-                        <!-- Text Wrapper Content -->
-                        <p class="has-anim" data-anim="linesUp">We help design products and services that
-                            <br>improve the daily lives of humans, while
-                            <br>meeting brand and business goals.
-                        </p>
-                        <!--/ Text Wrapper Content -->
-                    </div>
-                    <!--/ Text Wrapper -->
-                </div>
-                <!--/ Column 6 -->
-
-                <!-- Column 6 -->
-                <div class="c-col-6">
-                    <!-- Single Image -->
-                    <div class="single-image align-right">
-                        <img cla src="img/partners-logo.png">
-                    </div>
-                    <!--/ Single Image -->
-
-                    <!-- Single Image -->
-                    <div class="single-image align-right" style="transform: translateY(-35px)">
-                        <img class="has-anim" data-anim="writeText" src="img/partners.png">
-                    </div>
-                    <!--/ Single Image -->
-                </div>
-                <!--/ Column 6 -->
-
-                <!-- Column 12 -->
-                <div class="c-col-12">
-                    <!-- Sheeria Clients -->
-                    <div class="sheeria-clients">
-                        <!-- Clients Wrapper -->
-                        <div class="clients-wrap">
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl1.png">
-                                    <img class="light-logo" src="img/cl1-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl2.png">
-                                    <img class="light-logo" src="img/cl2-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl3.png">
-                                    <img class="light-logo" src="img/cl3-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link  -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl4.png">
-                                    <img class="light-logo" src="img/cl4-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl5.png">
-                                    <img class="light-logo" src="img/cl5-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl6.png">
-                                    <img class="light-logo" src="img/cl6-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl7.png">
-                                    <img class="light-logo" src="img/cl7-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl8.png">
-                                    <img class="light-logo" src="img/cl8-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl9.png">
-                                    <img class="light-logo" src="img/cl9-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-
-                            <!-- Client -->
-                            <div class="client">
-                                <!-- Client Link -->
-                                <a href="#">
-                                    <!-- Client Logos -->
-                                    <img class="dark-logo" src="img/cl10.png">
-                                    <img class="light-logo" src="img/cl10-w.png">
-                                    <!--/ Client Logos -->
-                                </a>
-                                <!--/ Client Link -->
-                            </div>
-                            <!--/ Client -->
-                        </div>
-                        <!--/ Clients Wrapper -->
-                    </div>
-                    <!--/ Sheeria Client -->
-                </div>
-                <!--/ Column 12 -->
-            </div>
-            <!--/ Wrapper -->
-        </div>
-        <!--/ Section -->
     </div>
     <!-- /Page -->
 
@@ -1111,6 +1105,7 @@
     <script src="js/jquery-ui.js"></script>
     <script src="js/gsap.js"></script>
     <script src="js/circletype.min.js"></script>
+    <script src="js/DrawSVGPlugin.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/ScrollTrigger.js"></script>
     <script src="js/ScrollToPlugin.js"></script>

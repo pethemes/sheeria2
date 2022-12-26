@@ -267,7 +267,7 @@ p {
 .sheeria-form textarea {
     width: 100%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border: 1px solid #d7d7d7;
     outline: none !important
 }
@@ -335,8 +335,8 @@ button {
     top: 60%;
     left: 50%;
     -webkit-transform: translate(-50%, 0%);
-        -ms-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
     font-size: 30px;
     opacity: 0;
     -webkit-transition: all .4s ease;
@@ -351,8 +351,8 @@ button {
 
 .send-wrap:hover::after {
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     font-size: 30px;
     opacity: 1;
 }
@@ -368,7 +368,7 @@ button {
     width: 100%;
     padding: 50px 5%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     position: absolute;
     z-index: 999
 }
@@ -378,8 +378,8 @@ button {
     float: left;
     width: 50px;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .site-logo,
@@ -392,8 +392,8 @@ button {
     position: relative;
     z-index: 99;
     -webkit-transform: translateY(-100px);
-        -ms-transform: translateY(-100px);
-            transform: translateY(-100px);
+    -ms-transform: translateY(-100px);
+    transform: translateY(-100px);
 }
 
 .header-toggle,
@@ -488,15 +488,15 @@ ul.lang-switch li.active a {
 
 .hamburger-toggle.is-active .toggle-line:first-child {
     -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
     margin-bottom: -8px;
 }
 
 .hamburger-toggle.is-active .toggle-line:last-child {
     -webkit-transform: rotate(135deg);
-        -ms-transform: rotate(135deg);
-            transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
 .fullscreen-menu {
@@ -507,12 +507,12 @@ ul.lang-switch li.active a {
     right: 0;
     z-index: 99;
     pointer-events: none;
-   
+
 }
 
 .fullscreen-menu.is-active {
     pointer-events: all;
-     
+
 }
 
 .fullscreen-menu-wrap {
@@ -546,8 +546,10 @@ ul.lang-switch li.active a {
     -o-transition: all .4s ease;
     transition: all .4s ease;
     -webkit-transform: translateY(50px);
-        -ms-transform: translateY(50px);
-            transform: translateY(50px)
+    -ms-transform: translateY(50px);
+    transform: translateY(50px);
+    z-index: 2;
+    position: relative;
 }
 
 .is-active .fullscreen-cta a::before {
@@ -556,8 +558,8 @@ ul.lang-switch li.active a {
     -o-transition: all .4s ease .5s;
     transition: all .4s ease .5s;
     -webkit-transform: translateY(0px);
-        -ms-transform: translateY(0px);
-            transform: translateY(0px)
+    -ms-transform: translateY(0px);
+    transform: translateY(0px)
 }
 
 .fullscreen-cta a {
@@ -570,6 +572,69 @@ ul.lang-switch li.active a {
     overflow: hidden
 }
 
+.fullscreen-cta::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/greek-pattern.png);
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
+    opacity: 0;
+    -webkit-transition: all .7s ease 0s;
+    -o-transition: all .7s ease 0s;
+    transition: all .7s ease 0s;
+}
+
+.fullscreen-cta a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/greek-pattern.png);
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-transform: translatex(50%) rotate(180deg);
+        -ms-transform: translatex(50%) rotate(180deg);
+            transform: translatex(50%) rotate(180deg);
+    opacity: 0;
+    -webkit-transition: all .7s ease 0s;
+    -o-transition: all .7s ease 0s;
+    transition: all .7s ease 0s;
+}
+
+.is-active .fullscreen-cta::before {
+    -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+    -webkit-transition: all .7s ease .2s;
+    -o-transition: all .7s ease .2s;
+    transition: all .7s ease .2s;
+}
+
+.is-active .fullscreen-cta a::after {
+    -webkit-transform: translatex(0%) rotate(180deg);
+        -ms-transform: translatex(0%) rotate(180deg);
+            transform: translatex(0%) rotate(180deg);
+    opacity: 1;
+    -webkit-transition: all .7s ease .2s;
+    -o-transition: all .7s ease .2s;
+    transition: all .7s ease .2s;
+}
+
+
 .cta-wrap i {
     display: block;
     margin-top: 20px;
@@ -580,8 +645,8 @@ ul.lang-switch li.active a {
     right: 5%;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     text-align: right;
     opacity: 0;
     visibility: hidden
@@ -599,15 +664,15 @@ ul.lang-switch li.active a {
     margin-top: 50px;
     margin-right: 20px;
     -webkit-transform: translateX(-70px);
-        -ms-transform: translateX(-70px);
-            transform: translateX(-70px);
+    -ms-transform: translateX(-70px);
+    transform: translateX(-70px);
     opacity: 0;
 }
 
 .cta-text div {
     -webkit-transform: translateX(-70px);
-        -ms-transform: translateX(-70px);
-            transform: translateX(-70px);
+    -ms-transform: translateX(-70px);
+    transform: translateX(-70px);
     opacity: 0;
 }
 
@@ -628,8 +693,8 @@ ul.lang-switch li.active a {
     border: 1px solid #fff;
     border-radius: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .fullscreen-widget {
@@ -645,8 +710,8 @@ ul.lang-switch li.active a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .fs-widget-menu li {
@@ -664,8 +729,8 @@ ul.lang-switch li.active a {
     line-height: 100px;
     margin-bottom: 30px;
     -webkit-transform: translateY(50px);
-        -ms-transform: translateY(50px);
-            transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px);
     opacity: 0;
 }
 
@@ -680,8 +745,8 @@ ul.lang-switch li.active a {
     top: 0;
     right: 0;
     -webkit-transform: translate(100%, -50%);
-        -ms-transform: translate(100%, -50%);
-            transform: translate(100%, -50%);
+    -ms-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
     font-size: 20px;
     opacity: 0.4;
 }
@@ -692,8 +757,8 @@ ul.lang-switch li.active a {
     right: 5%;
     text-align: right;
     -webkit-transform: translateY(50px);
-        -ms-transform: translateY(50px);
-            transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px);
     opacity: 0;
 }
 
@@ -747,8 +812,8 @@ ul.lang-switch li.active a {
     left: unset;
     right: 0;
     -webkit-transition-delay: .1s;
-         -o-transition-delay: .1s;
-            transition-delay: .1s
+    -o-transition-delay: .1s;
+    transition-delay: .1s
 }
 
 /*--------------------------------------------------
@@ -777,8 +842,8 @@ ul.lang-switch li.active a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 3
 }
 
@@ -817,7 +882,7 @@ ul.lang-switch li.active a {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 
 }
 
@@ -825,15 +890,15 @@ ul.lang-switch li.active a {
 /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
 
 .sheeria-intro .intro-video video::-webkit-media-controls-panel {
-  display: none !important;
-  -webkit-appearance: none;
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 /* Old shadow dom for play button */
 
 .sheeria-intro .intro-video video::-webkit-media-controls-play-button {
-  display: none !important;
-  -webkit-appearance: none;
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 /* New shadow dom for play button */
@@ -841,8 +906,8 @@ ul.lang-switch li.active a {
 /* This one works! */
 
 .sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 .sheeria-intro .intro-video video::-webkit-media-controls {
@@ -850,7 +915,7 @@ ul.lang-switch li.active a {
 }
 
 .sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
-  display: none !important;
+    display: none !important;
 }
 
 .sheeria-intro .intro-video video::-webkit-media-controls-panel,
@@ -863,8 +928,8 @@ ul.lang-switch li.active a {
     bottom: 25%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     border: 1px solid #21509F;
     padding: 20px 40px;
     border-radius: 30px;
@@ -944,8 +1009,8 @@ div#footer {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%) rotate(20deg);
-        -ms-transform: translate(-50%, -50%) rotate(20deg);
-            transform: translate(-50%, -50%) rotate(20deg);
+    -ms-transform: translate(-50%, -50%) rotate(20deg);
+    transform: translate(-50%, -50%) rotate(20deg);
     width: 200px;
     height: 200px;
     display: block;
@@ -983,7 +1048,7 @@ ul.menu.footer-menu li a {
     margin-bottom: 0;
     padding: 0 40px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .back-to-top {
@@ -1002,6 +1067,9 @@ ul.menu.footer-menu li a {
     left: 0;
     width: 100%;
     height: 100%;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
 }
 
 .about-header .page-header-bg {
@@ -1012,14 +1080,13 @@ ul.menu.footer-menu li a {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 10vh;
 }
 
 .page-header-bg video {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 }
 
 .page-title {
@@ -1027,8 +1094,8 @@ ul.menu.footer-menu li a {
     top: 50%;
     left: 5%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .page-title::before {
@@ -1087,8 +1154,8 @@ ul.menu.footer-menu li a {
     bottom: 0;
     left: 50%;
     -webkit-transform: translate(-50%, 50%);
-        -ms-transform: translate(-50%, 50%);
-            transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
 }
 
 .about-header .sheeria-title::before {
@@ -1102,8 +1169,8 @@ ul.menu.footer-menu li a {
     width: 150px;
     height: 150px;
     -webkit-transform: translateY(-50px) translateX(-50px);
-        -ms-transform: translateY(-50px) translateX(-50px);
-            transform: translateY(-50px) translateX(-50px);
+    -ms-transform: translateY(-50px) translateX(-50px);
+    transform: translateY(-50px) translateX(-50px);
     background-size: 150px 150px;
     top: 0;
     position: absolute;
@@ -1144,11 +1211,11 @@ ul.menu.footer-menu li a {
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     -webkit-transform-origin: top;
-        -ms-transform-origin: top;
-            transform-origin: top
+    -ms-transform-origin: top;
+    transform-origin: top
 }
 
 .greek-logo {
@@ -1199,8 +1266,8 @@ ul.menu.footer-menu li a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     opacity: .9
 }
@@ -1210,11 +1277,11 @@ ul.menu.footer-menu li a {
     height: 130%;
     opacity: .7;
     -webkit-animation-name: width1;
-            animation-name: width1;
+    animation-name: width1;
     -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
+    animation-duration: 1.5s;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite
+    animation-iteration-count: infinite
 }
 
 @-webkit-keyframes width1 {
@@ -1279,11 +1346,11 @@ ul.menu.footer-menu li a {
     height: 160%;
     opacity: .4;
     -webkit-animation-name: width2;
-            animation-name: width2;
+    animation-name: width2;
     -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
+    animation-duration: 1.5s;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite
+    animation-iteration-count: infinite
 }
 
 
@@ -1292,8 +1359,8 @@ ul.menu.footer-menu li a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /*--------------------------------------------------
@@ -1340,18 +1407,19 @@ ul.menu.footer-menu li a {
 # Sheeria Vision
 ---------------------------------------------------*/
 .sheeria-vision-objective {
-    border: 1px solid #1BA2AD;
-    overflow: hidden;
-    border-radius: 30px;
+    display: block;
+    float: left;
+    width: 100%;
+    padding-bottom: 10%;
 }
 
 .sheeria-vision-objective > div {
     display: block;
     float: left;
     width: 50%;
-    border: 1px solid #1BA2AD;
+
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border-radius: 50%;
     height: 0;
     padding-bottom: 50%;
@@ -1387,8 +1455,47 @@ ul.menu.footer-menu li a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.sheeria-vision {
+    -webkit-transform: translateX(4.1%);
+        -ms-transform: translateX(4.1%);
+            transform: translateX(4.1%);
+}
+
+.sheeria-objective {
+    -webkit-transform: translateY(25%) translateX(-4.1%);
+        -ms-transform: translateY(25%) translateX(-4.1%);
+            transform: translateY(25%) translateX(-4.1%);
+}
+
+
+.sheeria-vision-objective .svg-circle {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+
+.sheeria-vision .svg-circle.low {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    opacity: .1;
+}
+
+.sheeria-objective .svg-circle.low {
+    position: absolute;
+    top: -50%;
+    right: 20%;
+    opacity: .1;
+}
+
+.sheeria-vision-objective .svg-circle.low {
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
 }
 
 /*--------------------------------------------------
@@ -1437,15 +1544,15 @@ ul.menu.footer-menu li a {
     position: relative;
     background-size: cover;
     background-position: center;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .section.has-svg-bg .wrapper-full {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .section.fullscreen {
@@ -1457,7 +1564,7 @@ ul.menu.footer-menu li a {
 /* Avoid Chrome to see Safari hack */
 @supports (-webkit-touch-callout: none) {
 
-   .section.fullscreen {
+    .section.fullscreen {
         /* The hack for Safari */
         height: -webkit-fill-available;
     }
@@ -1783,8 +1890,8 @@ section:after {
     border: 1px solid #1DA5AF;
     border-radius: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     -webkit-transition: all .4s ease;
@@ -1796,8 +1903,8 @@ section:after {
     position: absolute;
     left: 0;
     -webkit-transform: translateY(-35%);
-        -ms-transform: translateY(-35%);
-            transform: translateY(-35%);
+    -ms-transform: translateY(-35%);
+    transform: translateY(-35%);
     width: 100%;
 }
 
@@ -1846,8 +1953,8 @@ section:after {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 80%;
     z-index: 1
 }
@@ -1855,7 +1962,7 @@ section:after {
 /* Avoid Chrome to see Safari hack */
 @supports (-webkit-touch-callout: none) {
 
-   .sheeria-services-hold {
+    .sheeria-services-hold {
         /* The hack for Safari */
         height: -webkit-fill-available;
     }
@@ -1930,7 +2037,7 @@ span.sf-curr::after {
     margin: 0 auto;
     position: relative;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     z-index: 1
 }
 
@@ -1944,7 +2051,7 @@ span.mi-foundation {
     top: 0;
     left: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 span.mi-dot {
@@ -1957,21 +2064,27 @@ span.mi-dot {
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(10px);
-        -ms-transform: translateX(-50%) translateY(10px);
-            transform: translateX(-50%) translateY(10px);
+    -ms-transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(10px);
 }
 
 .mi-bg {
     position: absolute;
     left: 50%;
+
     -webkit-transform: translateX(-50%) translateY(10%);
+
         -ms-transform: translateX(-50%) translateY(10%);
+
             transform: translateX(-50%) translateY(10%)
 }
 
 .mi-bg.index_0 {
+
     -webkit-transform: translateX(-50%) translateY(-10%);
+
         -ms-transform: translateX(-50%) translateY(-10%);
+
             transform: translateX(-50%) translateY(-10%)
 }
 
@@ -1987,8 +2100,8 @@ span.mi-dot {
     width: 35vh;
     height: 35vh;
     -webkit-transform: translate(-50%, 50%);
-        -ms-transform: translate(-50%, 50%);
-            transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
 }
 
 .services-link::after {
@@ -2002,8 +2115,8 @@ span.mi-dot {
     border-radius: 50%;
     background: #fff;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: -1;
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -2021,8 +2134,8 @@ span.mi-dot {
     border-radius: 50%;
     background: transparent;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: -1;
     border: 1px solid #fff;
     -webkit-transition: all 2s ease;
@@ -2064,8 +2177,8 @@ span.mi-dot {
     left: 50%;
     top: 35%;
     -webkit-transform: translate(-50%, -25%);
-        -ms-transform: translate(-50%, -25%);
-            transform: translate(-50%, -25%);
+    -ms-transform: translate(-50%, -25%);
+    transform: translate(-50%, -25%);
     opacity: 0;
     -webkit-transition: all 1s ease .5s;
     -o-transition: all 1s ease .5s;
@@ -2084,8 +2197,8 @@ span.mi-dot {
     left: 50%;
     opacity: 0;
     -webkit-transform: translate(-50%, -25%) rotate(0deg);
-        -ms-transform: translate(-50%, -25%) rotate(0deg);
-            transform: translate(-50%, -25%) rotate(0deg);
+    -ms-transform: translate(-50%, -25%) rotate(0deg);
+    transform: translate(-50%, -25%) rotate(0deg);
     z-index: 0;
     color: #000;
     -webkit-transition: all 1.5s ease .5s;
@@ -2096,14 +2209,79 @@ span.mi-dot {
 .services-link.is-inview i {
     opacity: .02;
     -webkit-transform: translate(-50%, -25%) rotate(130deg);
-        -ms-transform: translate(-50%, -25%) rotate(130deg);
-            transform: translate(-50%, -25%) rotate(130deg);
+    -ms-transform: translate(-50%, -25%) rotate(130deg);
+    transform: translate(-50%, -25%) rotate(130deg);
 }
 
 .services-link:hover i {
     -webkit-transform: translate(-50%, -25%) rotate(180deg);
-        -ms-transform: translate(-50%, -25%) rotate(180deg);
-            transform: translate(-50%, -25%) rotate(180deg);
+    -ms-transform: translate(-50%, -25%) rotate(180deg);
+    transform: translate(-50%, -25%) rotate(180deg);
+}
+
+/*--------------------------------------------------
+## Sheeria Text Box
+---------------------------------------------------*/
+
+.sheeria-text-box {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 5% 5% 10% 5%;
+    position: relative;
+    color: #fff;
+    -webkit-transform: translateY(-35%);
+        -ms-transform: translateY(-35%);
+            transform: translateY(-35%);
+    mix-blend-mode: multiply;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.sheeria-text-box::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1BA2AD;
+    border-radius: 35px;
+    z-index: -1;
+}
+
+.sheeria-text-box::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-transform: translate(50%, 50%);
+        -ms-transform: translate(50%, 50%);
+            transform: translate(50%, 50%);
+}
+
+.sheeria-text-box .scroll-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+            transform: translateY(50%);
+}
+
+
+.sheeria-text-box .sheeria-title {
+    width: 30%;
+}
+
+.sheeria-text-box .text-wrapper {
+    width: 70%;
 }
 
 /*--------------------------------------------------
@@ -2133,8 +2311,8 @@ span.mi-dot {
     top: 50%;
     right: 0;
     -webkit-transform: translateY(-50%) translateX(15px) rotate(-45deg);
-        -ms-transform: translateY(-50%) translateX(15px) rotate(-45deg);
-            transform: translateY(-50%) translateX(15px) rotate(-45deg);
+    -ms-transform: translateY(-50%) translateX(15px) rotate(-45deg);
+    transform: translateY(-50%) translateX(15px) rotate(-45deg);
     color: #74BCC3;
     background: #fff;
     padding: 15px;
@@ -2168,8 +2346,8 @@ span.mi-dot {
     top: 0;
     left: 0;
     -webkit-transform: translate(-150%, 100%);
-        -ms-transform: translate(-150%, 100%);
-            transform: translate(-150%, 100%);
+    -ms-transform: translate(-150%, 100%);
+    transform: translate(-150%, 100%);
     width: 20px;
     height: 20px;
     background-image: url(img/highlight.png);
@@ -2184,8 +2362,8 @@ span.mi-dot {
 .sheeria-title.is-inview::before {
     opacity: 1;
     -webkit-transform: translate(-150%, 0%);
-        -ms-transform: translate(-150%, 0%);
-            transform: translate(-150%, 0%);
+    -ms-transform: translate(-150%, 0%);
+    transform: translate(-150%, 0%);
 }
 
 .sheeria-title h5 {
@@ -2211,7 +2389,7 @@ span.mi-dot {
 /* Avoid Chrome to see Safari hack */
 @supports (-webkit-touch-callout: none) {
 
-   .sheeria-landing {
+    .sheeria-landing {
         /* The hack for Safari */
         height: -webkit-fill-available;
     }
@@ -2223,8 +2401,8 @@ span.mi-dot {
     top: 45%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
     z-index: 2
@@ -2252,8 +2430,8 @@ span.mi-dot {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -100%);
-        -ms-transform: translate(-50%, -100%);
-            transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
     font-size: 25px;
     color: #74BCC3;
     opacity: 0;
@@ -2266,8 +2444,8 @@ span.mi-dot {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background: #F2F2F2;
     width: 90px;
     height: 90px;
@@ -2290,8 +2468,8 @@ span.mi-dot {
     bottom: 0;
     left: 0;
     -webkit-transform: translatey(67%);
-        -ms-transform: translatey(67%);
-            transform: translatey(67%);
+    -ms-transform: translatey(67%);
+    transform: translatey(67%);
 }
 
 .landing-image::after {
@@ -2328,14 +2506,14 @@ span.mi-dot {
     float: left;
     width: 100%;
     -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .sheeria-chairs img {
@@ -2379,8 +2557,8 @@ span.mi-dot {
 .charis-a img:last-child,
 .charis-b img:last-child {
     -webkit-transform: translateY(-40px);
-        -ms-transform: translateY(-40px);
-            transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
 }
 
 .charis-a img:nth-child(2),
@@ -2388,8 +2566,8 @@ span.mi-dot {
 .charis-a img:nth-child(8),
 .charis-b img:nth-child(8) {
     -webkit-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-            transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
 }
 
 .charis-a img:nth-child(3),
@@ -2397,8 +2575,8 @@ span.mi-dot {
 .charis-a img:nth-child(7),
 .charis-b img:nth-child(7) {
     -webkit-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-            transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
 }
 
 .charis-a img:nth-child(4),
@@ -2406,8 +2584,8 @@ span.mi-dot {
 .charis-a img:nth-child(6),
 .charis-b img:nth-child(6) {
     -webkit-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .charis-c img:first-child,
@@ -2415,29 +2593,29 @@ span.mi-dot {
 .charis-d img:first-child,
 .charis-d img:last-child {
     -webkit-transform: translateY(-60px);
-        -ms-transform: translateY(-60px);
-            transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    transform: translateY(-60px);
 }
 
 .charis-c img:nth-child(2),
 .charis-c img:nth-child(6) {
     -webkit-transform: translateY(-40px);
-        -ms-transform: translateY(-40px);
-            transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
 }
 
 .charis-c img:nth-child(3),
 .charis-c img:nth-child(5) {
     -webkit-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-            transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
 }
 
 .charis-d img:nth-child(2),
 .charis-d img:nth-child(4) {
     -webkit-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-            transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
 }
 
 
@@ -2447,9 +2625,11 @@ span.mi-dot {
 
 .play-music-button {
     display: inline-block;
-    position: relative;
+    position: fixed;
     cursor: pointer;
-    z-index: 11
+    z-index: 11;
+    right: 5%;
+    bottom: 5%;
 }
 
 .play-music-button.align-right {
@@ -2461,8 +2641,8 @@ span.mi-dot {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -45%);
-        -ms-transform: translate(-50%, -45%);
-            transform: translate(-50%, -45%);
+    -ms-transform: translate(-50%, -45%);
+    transform: translate(-50%, -45%);
     z-index: 5;
     color: #fff;
     width: 40px;
@@ -2475,56 +2655,39 @@ span.mi-dot {
 .pmb-icon span {
     display: inline-block;
     background: #fff;
-    height: 100%;
+    height: 75%;
     width: 7px;
     vertical-align: middle;
 }
 
-.play-music-button::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background: #74BCC3;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    z-index: 0;
-    border-radius: 50%;
-    border: 1px solid #000
-}
-
 #pmb-text {
     font-size: 10px;
+    opacity: 0
 }
 
 .play-music-button::before {
     content: "";
     display: block;
     position: absolute;
-    width: 70px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     background: #000;
-    top: 55%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
     border-radius: 50%;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease
+    -webkit-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    transition: all .6s ease
 }
 
-.play-music-button:hover::before {
-    height: 70px;
-    top: 50%
+.play-music-button.is-sticked::before {
+    width: 75px;
+    height: 75px
 }
-
 
 /*--------------------------------------------------
 ## Clients
@@ -2549,7 +2712,7 @@ span.mi-dot {
     border: 1px solid #00000012;
     text-align: center;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     padding: 40px 0;
 }
 
@@ -2598,8 +2761,8 @@ span.mi-dot {
     display: inline-flex;
     gap: 50px;
     -webkit-transform: translateX(25%);
-        -ms-transform: translateX(25%);
-            transform: translateX(25%);
+    -ms-transform: translateX(25%);
+    transform: translateX(25%);
     margin-bottom: 100px;
 }
 
@@ -2621,9 +2784,9 @@ span.mi-dot {
 
 .team-member {
     -ms-flex-preferred-size: 400px;
-        flex-basis: 400px;
+    flex-basis: 400px;
     -ms-flex-negative: 0;
-        flex-shrink: 0;
+    flex-shrink: 0;
     width: 400px
 }
 
@@ -2631,8 +2794,8 @@ span.mi-dot {
     margin-left: 130px;
     top: 50%;
     -webkit-transform: translateY(30%);
-        -ms-transform: translateY(30%);
-            transform: translateY(30%);
+    -ms-transform: translateY(30%);
+    transform: translateY(30%);
 }
 
 /*--------------------------------------------------
@@ -2667,8 +2830,8 @@ span.mi-dot {
     background-repeat: no-repeat;
     margin-bottom: 10px;
     -webkit-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-            transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
     opacity: 0;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -2681,8 +2844,8 @@ span.mi-dot {
 
 .text-wrapper.highlight.green.is-inview::before {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
     opacity: 1
 }
 
@@ -2722,6 +2885,22 @@ span.mi-dot {
 -------------------------------------------------------------------**/
 
 @media only screen and (max-width: 450px) {
+    
+    .sheeria-text-box {
+        -webkit-transform: translateY(-60%);
+            -ms-transform: translateY(-60%);
+                transform: translateY(-60%)
+    }
+    
+    .play-music-button {
+        right: 20%
+    }
+    
+    .mi-bg {
+        -webkit-transform: translateX(-50%) translateY(10%) scale(0.3);
+            -ms-transform: translateX(-50%) translateY(10%) scale(0.3);
+                transform: translateX(-50%) translateY(10%) scale(0.3);
+    }
 
     .about-header .scroll-button {
         bottom: -3%
@@ -2755,8 +2934,8 @@ span.mi-dot {
 
     .site-branding {
         -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .language-switcher {
@@ -2776,7 +2955,7 @@ span.mi-dot {
     }
 
     .fullscreen-menu-wrap {
-        height: 50%;
+        height: 70%;
     }
 
     .cta-text {
@@ -2792,11 +2971,12 @@ span.mi-dot {
     }
 
     .fullscreen-cta {
-        height: 25%;
+        height: 30%;
     }
 
     .fullscreen-widget {
         height: 25%;
+        display: none;
     }
 
     .fs-widget-wrap {
@@ -2806,7 +2986,7 @@ span.mi-dot {
         text-align: unset;
         padding: 0 5%;
         -webkit-box-sizing: border-box;
-                box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     ul.menu.fs-widget-menu {
@@ -2829,8 +3009,8 @@ span.mi-dot {
 
     .landing-image {
         -webkit-transform: translateY(60%) scale(1.5);
-            -ms-transform: translateY(60%) scale(1.5);
-                transform: translateY(60%) scale(1.5)
+        -ms-transform: translateY(60%) scale(1.5);
+        transform: translateY(60%) scale(1.5)
     }
 
     .landing-image.is-inview::after {
@@ -2893,14 +3073,14 @@ span.mi-dot {
 
     .team-member {
         -ms-flex-preferred-size: 65vw;
-            flex-basis: 65vw;
+        flex-basis: 65vw;
         width: 65vw
     }
 
     .team-wrapper {
         -webkit-transform: translateX(5%);
-            -ms-transform: translateX(5%);
-                transform: translateX(5%)
+        -ms-transform: translateX(5%);
+        transform: translateX(5%)
     }
 
     .text-wrapper p br {
@@ -2945,6 +3125,7 @@ span.mi-dot {
     .wrapper.footer-bottom .c-col-2 {
         width: 50%;
         padding: 0 5px;
+        margin-bottom: 15px
     }
 
     .wrapper-full.footer-sub-bar {
@@ -3003,7 +3184,7 @@ span.mi-dot {
     .greek-bg img {
         height: 100%;
         -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
     }
 
     .greek-wrap {
@@ -3043,8 +3224,8 @@ span.mi-dot {
         top: 50%;
         left: 0;
         -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: -1;
     }
@@ -3071,50 +3252,126 @@ span.mi-dot {
     p.g-text {
         padding: 0 15px;
     }
-    
+
     .sheeria-title.is-inview::before {
-    -webkit-transform: none;
+        -webkit-transform: none;
         -ms-transform: none;
-            transform: none;
-}
-    
-    
-/* This used to work for the parent element of button divs */
-/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+        transform: none;
+    }
 
-.sheeria-intro .intro-video video::-webkit-media-controls-panel {
-  display: none !important;
-  -webkit-appearance: none;
-}
 
-/* Old shadow dom for play button */
+    /* This used to work for the parent element of button divs */
+    /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
 
-.sheeria-intro .intro-video video::-webkit-media-controls-play-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
+    .sheeria-intro .intro-video video::-webkit-media-controls-panel {
+        display: none !important;
+        -webkit-appearance: none;
+    }
 
-/* New shadow dom for play button */
+    /* Old shadow dom for play button */
 
-/* This one works! */
+    .sheeria-intro .intro-video video::-webkit-media-controls-play-button {
+        display: none !important;
+        -webkit-appearance: none;
+    }
 
-.sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
+    /* New shadow dom for play button */
 
-.sheeria-intro .intro-video video::-webkit-media-controls {
-    opacity: 0;
-}
+    /* This one works! */
 
-.sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-}
+    .sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none;
+    }
 
-.sheeria-intro .intro-video video::-webkit-media-controls-panel,
-.sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-}
+    .sheeria-intro .intro-video video::-webkit-media-controls {
+        opacity: 0;
+    }
+
+    .sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+    }
+
+    .sheeria-intro .intro-video video::-webkit-media-controls-panel,
+    .sheeria-intro .intro-video video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+    }
+
+    .sheeria-text-box .sheeria-title {
+        width: 100%;
+    }
+
+    .sheeria-text-box .text-wrapper {
+        width: 100%;
+    }
+
+    .sheeria-text-box .scroll-button {
+        right: unset;
+        left: 50%;
+        -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+                transform: translateY(50%);
+    }
+
+    .sheeria-text-box::before {
+        right: unset;
+        left: 50%;
+        -webkit-transform: translate(-50%, 50%);
+            -ms-transform: translate(-50%, 50%);
+                transform: translate(-50%, 50%);
+    }
+
+    .sheeria-text-box {
+        padding-bottom: 150px;
+    }
+
+    .sheeria-vision {
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+    }
+
+    .sheeria-objective {
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+    }
+
+    .sheeria-vision-objective {
+        margin-top: 50px;
+    }
+
+    .svg-circle.low {
+        display: none;
+    }
+
+    .greek-logo {
+        width: 35%;
+        margin-top: 50px;
+    }
+
+    .greek-logo img {
+        width: 100%;
+    }
+
+    .greek-content {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .greek-theater-section {
+        overflow: hidden;
+    }
+
+    .sheeria-text-box .text-wrapper h3 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .g-text br {
+        display: none
+    }
 
 
 }
@@ -3163,7 +3420,7 @@ span.mi-dot {
     .team-member {
         width: 250px;
         -ms-flex-preferred-size: 250px;
-            flex-basis: 250px;
+        flex-basis: 250px;
     }
 
     .c-col-md-12 {
@@ -3176,8 +3433,8 @@ span.mi-dot {
 
     .landing-image {
         -webkit-transform: scale(1.2) translateY(50%);
-            -ms-transform: scale(1.2) translateY(50%);
-                transform: scale(1.2) translateY(50%);
+        -ms-transform: scale(1.2) translateY(50%);
+        transform: scale(1.2) translateY(50%);
 
 
     }
@@ -3202,17 +3459,3 @@ span.mi-dot {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
