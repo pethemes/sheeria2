@@ -325,6 +325,9 @@ button {
 
 .send-wrap {
     position: relative;
+    display: block;
+    float: left;
+    width: 100%;
 }
 
 .send-wrap::after {
@@ -585,8 +588,8 @@ ul.lang-switch li.active a {
     background-position: top;
     background-repeat: no-repeat;
     -webkit-transform: translateX(50%);
-        -ms-transform: translateX(50%);
-            transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
     opacity: 0;
     -webkit-transition: all .7s ease 0s;
     -o-transition: all .7s ease 0s;
@@ -606,8 +609,8 @@ ul.lang-switch li.active a {
     background-position: top;
     background-repeat: no-repeat;
     -webkit-transform: translatex(50%) rotate(180deg);
-        -ms-transform: translatex(50%) rotate(180deg);
-            transform: translatex(50%) rotate(180deg);
+    -ms-transform: translatex(50%) rotate(180deg);
+    transform: translatex(50%) rotate(180deg);
     opacity: 0;
     -webkit-transition: all .7s ease 0s;
     -o-transition: all .7s ease 0s;
@@ -616,9 +619,9 @@ ul.lang-switch li.active a {
 
 .is-active .fullscreen-cta::before {
     -webkit-transform: translateX(0%);
-        -ms-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: .5;
     -webkit-transition: all .7s ease .2s;
     -o-transition: all .7s ease .2s;
     transition: all .7s ease .2s;
@@ -626,9 +629,9 @@ ul.lang-switch li.active a {
 
 .is-active .fullscreen-cta a::after {
     -webkit-transform: translatex(0%) rotate(180deg);
-        -ms-transform: translatex(0%) rotate(180deg);
-            transform: translatex(0%) rotate(180deg);
-    opacity: 1;
+    -ms-transform: translatex(0%) rotate(180deg);
+    transform: translatex(0%) rotate(180deg);
+    opacity: .5;
     -webkit-transition: all .7s ease .2s;
     -o-transition: all .7s ease .2s;
     transition: all .7s ease .2s;
@@ -1067,9 +1070,7 @@ ul.menu.footer-menu li a {
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
+    overflow: hidden
 }
 
 .about-header .page-header-bg {
@@ -1079,7 +1080,7 @@ ul.menu.footer-menu li a {
 .sheeria-page-header {
     position: relative;
     width: 100%;
-    overflow: hidden;
+
 }
 
 .page-header-bg video {
@@ -1087,6 +1088,9 @@ ul.menu.footer-menu li a {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .page-title {
@@ -1183,6 +1187,42 @@ ul.menu.footer-menu li a {
 
 .about-header .sheeria-title.is-inview::after {
     opacity: 1
+}
+
+.page-desc {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    transform: translateY(50%);
+    padding: 50px;
+    background: #1BA2AD;
+    border-radius: 35px;
+    z-index: 2;
+}
+
+.page-desc-title {
+    color: rgb(255 255 255 / 40%);
+    display: block;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+.page-description {
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.page-desc::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
+    background-image: url(img/page-desc-icon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 /*--------------------------------------------------
@@ -1461,21 +1501,21 @@ ul.menu.footer-menu li a {
 
 .sheeria-vision {
     -webkit-transform: translateX(4.1%);
-        -ms-transform: translateX(4.1%);
-            transform: translateX(4.1%);
+    -ms-transform: translateX(4.1%);
+    transform: translateX(4.1%);
 }
 
 .sheeria-objective {
     -webkit-transform: translateY(25%) translateX(-4.1%);
-        -ms-transform: translateY(25%) translateX(-4.1%);
-            transform: translateY(25%) translateX(-4.1%);
+    -ms-transform: translateY(25%) translateX(-4.1%);
+    transform: translateY(25%) translateX(-4.1%);
 }
 
 
 .sheeria-vision-objective .svg-circle {
     -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 .sheeria-vision .svg-circle.low {
@@ -1494,8 +1534,8 @@ ul.menu.footer-menu li a {
 
 .sheeria-vision-objective .svg-circle.low {
     -webkit-transform: rotate(0);
-        -ms-transform: rotate(0);
-            transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
 }
 
 /*--------------------------------------------------
@@ -2074,18 +2114,18 @@ span.mi-dot {
 
     -webkit-transform: translateX(-50%) translateY(10%);
 
-        -ms-transform: translateX(-50%) translateY(10%);
+    -ms-transform: translateX(-50%) translateY(10%);
 
-            transform: translateX(-50%) translateY(10%)
+    transform: translateX(-50%) translateY(10%)
 }
 
 .mi-bg.index_0 {
 
     -webkit-transform: translateX(-50%) translateY(-10%);
 
-        -ms-transform: translateX(-50%) translateY(-10%);
+    -ms-transform: translateX(-50%) translateY(-10%);
 
-            transform: translateX(-50%) translateY(-10%)
+    transform: translateX(-50%) translateY(-10%)
 }
 
 .mi-bg:nth-child(even) path {
@@ -2231,11 +2271,11 @@ span.mi-dot {
     position: relative;
     color: #fff;
     -webkit-transform: translateY(-35%);
-        -ms-transform: translateY(-35%);
-            transform: translateY(-35%);
+    -ms-transform: translateY(-35%);
+    transform: translateY(-35%);
     mix-blend-mode: multiply;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .sheeria-text-box::after {
@@ -2262,8 +2302,8 @@ span.mi-dot {
     background: #fff;
     border-radius: 50%;
     -webkit-transform: translate(50%, 50%);
-        -ms-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
 }
 
 .sheeria-text-box .scroll-button {
@@ -2271,8 +2311,8 @@ span.mi-dot {
     right: 0;
     bottom: 0;
     -webkit-transform: translateY(50%);
-        -ms-transform: translateY(50%);
-            transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
 }
 
 
@@ -2327,6 +2367,250 @@ span.mi-dot {
     color: #fff;
 }
 
+/*--------------------------------------------------
+## Greek Theater Page
+---------------------------------------------------*/
+
+.the-greek-theater {
+    display: block;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.greek-head {
+    display: block;
+    width: 100%;
+    background: #21509F;
+    margin-top: 100px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding: 5%;
+    box-sizing: border-box;
+    color: #fff;
+    overflow: hidden;
+    background-image: url(img/gh-bg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.greek-head::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(img/greek-light.png);
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.greek-head .page-title::before {
+    content: url(img/page-title-shine-light.png);
+}
+
+.greek-head .page-title {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+
+}
+
+.gh-images {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.gh-image {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+.gh-image img {
+    width: 100%;
+}
+
+.greek-form-sec {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 100px 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    margin-top: -35px;
+    background: #fff;
+}
+
+.sheeria-form .field-wrap.half {
+    width: 48%;
+}
+
+/*--------------------------------------------------
+## Works Grid
+---------------------------------------------------*/
+
+.sheeria-works {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box
+}
+
+.sheeria-work {
+    display: block;
+    width: 40%;
+    float: left;
+    margin: 0 5%;
+    margin-bottom: 75px;
+
+}
+
+.sheeria-work a {
+    text-decoration: none;
+}
+
+.work-image,
+.work-image img {
+    width: 100%;
+    display: block;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.work-image img {
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.work-meta {
+    display: block;
+    float: left;
+}
+
+.work-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000
+}
+
+.work-cat {
+    color: rgb(0 0 0 / 50%);
+}
+
+.works-load-more {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 75px;
+}
+
+.lm-button {
+    padding: 20px 40px;
+    border: 1px solid #21509F;
+    display: inline-block;
+    background: #F2F2F2;
+    font-weight: 700;
+    border-radius: 35px;
+    transition: all .4s ease;
+}
+
+.lm-button:hover {
+    color: #fff;
+    background: #21509F;
+}
+
+/*--------------------------------------------------
+## Gallery
+---------------------------------------------------*/
+
+.sheeria-gallery {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.sheeria-gallery .gallery-item {
+    width: 30%;
+    margin-right: 3%;
+    display: block;
+    float: left;
+    padding: 50px;
+    background: #ebebeb;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+
+.sheeria-gallery .gallery-item img,
+.sheeria-gallery .gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.gallery-item.vid {
+    width: 63%;
+}
+
+/*--------------------------------------------------
+## Project Page
+---------------------------------------------------*/
+.project-header {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    border-bottom: 2px solid #EAEAEA;
+    margin-bottom: 75px;
+}
+
+.project-title::before {
+    content: url(img/page-title-shine.png);
+}
+
+.project-header .section {
+    height: 100vh;
+}
+
+.project-header .section .wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.project-title {
+    margin-bottom: 50px;
+}
+
+.project-detail {
+    display: block;
+    float: left;
+    margin-right: 100px;
+}
+
+.pd-title {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 15px;
+    opacity: .5;
+}
+
+.pd-cont {
+    font-size: 20px;
+    font-weight: 700;
+}
 
 /*--------------------------------------------------
 ## Sheeria Title
@@ -2886,20 +3170,96 @@ span.mi-dot {
 
 @media only screen and (max-width: 450px) {
     
+    .greek-head {
+    background-image: none;
+    padding-top: 15%;
+}
+
+.greek-desc br {
+    display: none;
+}
+
+.gh-image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.greek-head::before {
+    left: 50%;
+    top: 0;
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+    .project-detail {
+        margin-bottom: 50px;
+    }
+
+    .project-detail:last-child {
+        margin-bottom: 0;
+    }
+
+    .sheeria-gallery .gallery-item {
+        width: 100%;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .sheeria-work {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .sheeria-works {
+        padding: 0;
+    }
+
+    .page-description br {
+        display: none;
+    }
+
+    .page-description {
+        font-size: 18px;
+        line-height: 25px;
+        display: block;
+        width: 100%;
+        float: left;
+    }
+
+    .page-desc {
+        padding: 35px;
+        right: 0;
+        transform: translateY(40%);
+    }
+
+    .page-desc::before {
+        float: left;
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+    }
+
+    .page-desc-title {
+        float: left;
+        margin-top: 10px;
+    }
+
     .sheeria-text-box {
         -webkit-transform: translateY(-60%);
-            -ms-transform: translateY(-60%);
-                transform: translateY(-60%)
+        -ms-transform: translateY(-60%);
+        transform: translateY(-60%)
     }
-    
+
     .play-music-button {
         right: 20%
     }
-    
+
     .mi-bg {
         -webkit-transform: translateX(-50%) translateY(10%) scale(0.3);
-            -ms-transform: translateX(-50%) translateY(10%) scale(0.3);
-                transform: translateX(-50%) translateY(10%) scale(0.3);
+        -ms-transform: translateX(-50%) translateY(10%) scale(0.3);
+        transform: translateX(-50%) translateY(10%) scale(0.3);
     }
 
     .about-header .scroll-button {
@@ -3309,16 +3669,16 @@ span.mi-dot {
         right: unset;
         left: 50%;
         -webkit-transform: translateY(50%);
-            -ms-transform: translateY(50%);
-                transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        transform: translateY(50%);
     }
 
     .sheeria-text-box::before {
         right: unset;
         left: 50%;
         -webkit-transform: translate(-50%, 50%);
-            -ms-transform: translate(-50%, 50%);
-                transform: translate(-50%, 50%);
+        -ms-transform: translate(-50%, 50%);
+        transform: translate(-50%, 50%);
     }
 
     .sheeria-text-box {
@@ -3327,14 +3687,14 @@ span.mi-dot {
 
     .sheeria-vision {
         -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
+        -ms-transform: none;
+        transform: none;
     }
 
     .sheeria-objective {
         -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
+        -ms-transform: none;
+        transform: none;
     }
 
     .sheeria-vision-objective {

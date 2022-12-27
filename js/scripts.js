@@ -709,27 +709,33 @@
         var text = $('#scroll-button-text'),
             scrollButton = $('.scroll-button');
 
-        new CircleType(document.getElementById('scroll-button-text'));
+        if (scrollButton.length) {
 
-        gsap.to(text, {
-            rotate: 360,
-            repeat: -1,
-            duration: 20,
-            ease: 'none'
-        });
+            new CircleType(document.getElementById('scroll-button-text'));
 
-        let scrollSize = $('.sheeria-landing').outerHeight();
-
-        scrollButton.on('click', function () {
-
-            gsap.to(window, {
-                duration: 1.5,
-                scrollTo: scrollSize,
-                ease: 'power3.inOut'
+            gsap.to(text, {
+                rotate: 360,
+                repeat: -1,
+                duration: 20,
+                ease: 'none'
             });
 
+            let scrollSize = $('.sheeria-landing').outerHeight();
 
-        })
+            scrollButton.on('click', function () {
+
+                gsap.to(window, {
+                    duration: 1.5,
+                    scrollTo: scrollSize,
+                    ease: 'power3.inOut'
+                });
+
+
+            })
+
+        }
+
+
 
     }
 
@@ -916,7 +922,7 @@
                         scrollTrigger: {
                             trigger: $this,
                             scrub: 1,
-                     
+
 
                         }
                     })
@@ -931,7 +937,7 @@
                         scrollTrigger: {
                             trigger: $this,
                             scrub: 1,
-                   
+
 
                         }
                     })
@@ -1330,7 +1336,115 @@
     }
     sheeriaGreekTheater();
 
+    function sheeriaPageHeaders() {
 
+        var pageHeader = $('.sheeria-page-header'),
+            desc = pageHeader.find('.page-desc');
+
+        if (desc.length) {
+
+            let marBot = desc.outerWidth() / 2;
+
+            gsap.set(pageHeader, {
+                marginBottom: marBot
+            })
+
+
+        }
+
+
+
+
+
+
+    }
+    sheeriaPageHeaders();
+
+    function sheeriaWorks() {
+
+        var sheeriaWworks = $('.sheeria-works'),
+            postPerView = 4,
+            works = sheeriaWworks.find('.sheeria-work'),
+            button = $('.works-load-more'),
+            count = 0;
+
+        if (works.length) {
+
+            works.each(function (i) {
+                i++
+
+                let $this = $(this);
+
+                $this.addClass('work_' + i);
+
+                if (i > postPerView) {
+                    $this.hide();
+                }
+
+
+
+
+            })
+
+
+            button.on('click', function () {
+
+                count++
+
+                var find = (count + 1) * postPerView;
+
+                let findProj = "";
+
+                for (let x = postPerView * count; x < find + 1; x++) {
+                    findProj += ".work_" + x + " ";
+                }
+
+
+
+
+
+
+
+
+
+            })
+
+
+
+
+        }
+
+    }
+    sheeriaWorks();
+
+    function sheeriaGallery() {
+
+        var gallery = $('.sheeria-gallery');
+
+        if (gallery.length) {
+
+            var item = gallery.find('.gallery-item');
+
+
+
+            var mobileQuery = window.matchMedia('(max-width: 450px)');
+            if (!mobileQuery.matches) {
+          var height = item.first().outerHeight();
+
+            gsap.set(item, {
+                height: height
+            })
+
+
+            }
+
+  
+
+        }
+
+
+    }
+    sheeriaGallery();
 
     $(window).on('load', function () {
 
