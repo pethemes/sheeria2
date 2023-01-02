@@ -8,7 +8,7 @@
 
     })
 
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, DrawSVGPlugin);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, DrawSVGPlugin, CustomEase);
 
 
 
@@ -165,7 +165,7 @@
         })
 
         gsap.to(parent, {
-            marginTop: '-20vh',
+            marginTop: '-15vh',
             scrollTrigger: {
                 trigger: parent,
                 start: 'top bottom',
@@ -233,7 +233,7 @@
             introAnim.to(introLogo, {
                 top: siteLogoTop,
                 left: siteLogoLeft,
-                width: 50,
+                width: 45,
                 duration: 1.5,
                 yPercent: 0,
                 xPercent: 0,
@@ -267,7 +267,7 @@
     }
 
 
-
+    var fsAnim, toggle;
 
     function fullscrenMenu() {
 
@@ -289,10 +289,10 @@
 
         })
 
-        var toggle = $('.hamburger-toggle'),
-            fsMenu = $('.fullscreen-menu');
+        toggle = $('.hamburger-toggle');
+        var fsMenu = $('.fullscreen-menu');
 
-        var fsAnim = gsap.timeline({
+        fsAnim = gsap.timeline({
             yoyo: true,
             delay: .3,
             paused: true,
@@ -378,7 +378,7 @@
 
 
     }
-    fullscrenMenu();
+
 
     function sheeriaServices() {
 
@@ -449,17 +449,9 @@
 
 
                 gsap.to(findBg, {
-                    yPercent: -80,
+                    yPercent: -110,
                     scale: 0.3,
                     duration: 1,
-                    onComplete: function () {
-
-                        gsap.to(findBg, {
-                            scale: 0.7
-                        })
-
-
-                    }
 
                 })
 
@@ -566,17 +558,9 @@
 
 
                         gsap.to(findBg, {
-                            yPercent: -65,
-                            scale: 0.4,
+                            yPercent: -100,
+                            scale: 0.3,
                             duration: 1,
-                            onComplete: function () {
-
-                                gsap.to(findBg, {
-                                    scale: 0.7
-                                })
-
-
-                            }
 
                         })
 
@@ -693,8 +677,8 @@
         gsap.to(teamWrap, {
             xPercent: perc,
             scrollTrigger: {
-                trigger: sec,
-                start: 'top top',
+                trigger: teamWrap,
+                start: 'top-=200 top',
                 end: 'bottom+=1500 bottom',
                 scrub: 1,
                 pin: true,
@@ -752,7 +736,7 @@
         })
 
     }
-    sheeriaCircularVideo();
+
 
     function sheeriaPlayMusicButton() {
 
@@ -901,7 +885,7 @@
 
 
     }
-    sheeriaVisionObj();
+
 
     function sheeriaTextBox() {
 
@@ -960,7 +944,6 @@
 
 
     }
-    sheeriaTextBox();
 
     function sheeriaTextScrollAnimations() {
 
@@ -1001,6 +984,14 @@
                     scrollTrigger: {
                         trigger: $this,
                         start: 'top bottom'
+                    },
+                    onStart: function () {
+
+
+                        gsap.set($this, {
+                            opacity: 1
+                        })
+
                     }
                 })
 
@@ -1016,6 +1007,10 @@
 
                 let lines = $this.find('.fill-line');
 
+
+                gsap.set($this, {
+                    opacity: 1
+                })
 
                 lines.each(function () {
 
@@ -1033,8 +1028,11 @@
                         width: '100%',
                         scrollTrigger: {
                             trigger: $this,
-                            scrub: 1
-                        }
+                            scrub: 1,
+                            start: 'top bottom',
+                            end: 'bottom top+=35%'
+                        },
+
                     })
 
 
@@ -1073,6 +1071,9 @@
                         if (title.length) {
                             title.addClass('is-inview')
                         }
+                        gsap.set($this, {
+                            opacity: 1
+                        })
 
                     }
                 })
@@ -1087,6 +1088,45 @@
 
 
     }
+
+    function greekPage() {
+
+        var iamge = $('.gh-image-right'),
+            logo = $('.tgt-logo');
+
+        var mobileQuery = window.matchMedia('(max-width: 450px)');
+
+
+        if (iamge.length) {
+
+            if (mobileQuery.matches) {
+                gsap.set(iamge, {
+                    y: '0%'
+                })
+            } else {
+
+                gsap.to(iamge, {
+                    yPercent: 40,
+                    scrollTrigger: {
+                        trigger: iamge,
+                        scrub: 1
+                    }
+                })
+            }
+
+
+
+            gsap.to(logo, {
+                yPercent: 0,
+                opacity: 1
+            })
+
+
+        }
+
+
+    }
+
 
     function sheeriaImageScrollAnimations() {
 
@@ -1128,14 +1168,29 @@
 
                 })
 
-                gsap.set(wrap, {
-                    height: imgHeight,
-                    width: 0,
-                    position: 'relative',
-                    display: 'block',
-                    overflow: 'hidden',
-                    left: lefto
-                })
+        if ($('body').hasClass('rtl')) {
+
+            gsap.set(wrap, {
+                height: imgHeight,
+                width: 0,
+                position: 'relative',
+                display: 'block',
+                overflow: 'hidden',
+                left: 'unset',
+                right: lefto
+            })
+
+        } else {
+
+            gsap.set(wrap, {
+                height: imgHeight,
+                width: 0,
+                position: 'relative',
+                display: 'block',
+                overflow: 'hidden',
+                left: lefto
+            })
+        }
 
                 gsap.to(wrap, {
                     width: imgWidth,
@@ -1263,7 +1318,7 @@
 
 
     }
-    sheeriaContactForm();
+
 
     function sheeriaGreekTheater() {
 
@@ -1334,7 +1389,7 @@
 
 
     }
-    sheeriaGreekTheater();
+
 
     function sheeriaPageHeaders() {
 
@@ -1358,7 +1413,7 @@
 
 
     }
-    sheeriaPageHeaders();
+
 
     function sheeriaWorks() {
 
@@ -1382,6 +1437,16 @@
                 }
 
 
+                gsap.fromTo($this, {
+                    yPercent: 50,
+                    opacity: 0,
+                }, {
+                    yPercent: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: $this
+                    }
+                })
 
 
             })
@@ -1399,14 +1464,6 @@
                     findProj += ".work_" + x + " ";
                 }
 
-
-
-
-
-
-
-
-
             })
 
 
@@ -1415,7 +1472,7 @@
         }
 
     }
-    sheeriaWorks();
+
 
     function sheeriaGallery() {
 
@@ -1425,26 +1482,112 @@
 
             var item = gallery.find('.gallery-item');
 
+            item.each(function (i) {
 
 
-            var mobileQuery = window.matchMedia('(max-width: 450px)');
-            if (!mobileQuery.matches) {
-          var height = item.first().outerHeight();
+                let $this = $(this);
 
-            gsap.set(item, {
-                height: height
+                $this.attr('data-index', i)
+
+                gsap.fromTo($this, {
+                    opacity: 0,
+                    yPercent: 50
+                }, {
+                    opacity: 1,
+                    yPercent: 0,
+                    ease: 'power3.out',
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: $this
+                    }
+                })
+
+
+
+
             })
 
+            var galleryCounter = $('.gallery-lightbox'),
+                galleryClose,
+                galleryLightBox;
 
-            }
+            item.on('click', function () {
 
-  
+                disableScroll();
+
+                let $this = $(this),
+                    datIndex = $this.data('index');
+
+                console.log(datIndex);
+
+                galleryCounter.addClass('is-open')
+
+                galleryCounter.wrapInner('<div class="swiper-wrapper"></div>')
+
+                var sWrap = galleryCounter.find('.swiper-wrapper');
+
+                galleryCounter.prepend('<div class="s-slide-prev"><i class="fa-solid fa-chevron-left"></i></div>')
+                galleryCounter.prepend('<div class="s-slide-next"><i class="fa-solid fa-chevron-right"></i></div>')
+                galleryCounter.prepend('<div class="s-gallery-close"><i class="fa-solid fa-xmark"></i></div>')
+
+
+                $('.gallery-item').clone().addClass('swiper-slide').appendTo(sWrap)
+
+                galleryLightBox = new Swiper('.gallery-lightbox', {
+                    slidesPerView: 1,
+                    navigation: {
+                        nextEl: '.s-slide-next',
+                        prevEl: '.s-slide-prev',
+                    },
+                    mousewheel: {
+                        invert: true
+                    }
+                })
+                galleryLightBox.slideTo(datIndex, 0)
+
+                galleryClose = $('.s-gallery-close');
+
+                galleryClose.on('click', function () {
+
+
+                    galleryCounter.removeClass('is-open');
+                    enableScroll();
+
+                    galleryLightBox.destroy(true, true);
+
+                    galleryCounter.empty();
+
+
+
+                })
+
+
+
+            })
+
+            $(document).keyup(function (e) {
+                if (e.key === "Escape") { // escape key maps to keycode `27`
+                    galleryCounter.removeClass('is-open');
+                    enableScroll();
+
+                    galleryLightBox.destroy(true, true);
+
+                    galleryCounter.empty();
+
+                }
+            });
+
+
+
+
+
+
 
         }
 
 
     }
-    sheeriaGallery();
+
 
     $(window).on('load', function () {
 
@@ -1459,7 +1602,6 @@
             sheeriaLanding();
             sheeriaCharis();
 
-
             gsap.to('.header-wrap', {
                 y: 0,
                 duration: 1.5,
@@ -1467,14 +1609,24 @@
 
 
             })
-
-
         }
 
         sheeriaScrollButton();
 
         sheeriaPlayMusicButton();
         sheeriaServices();
+
+        fullscrenMenu();
+        sheeriaCircularVideo();
+        sheeriaVisionObj();
+        sheeriaTextBox();
+
+        greekPage();
+        sheeriaContactForm();
+        sheeriaGreekTheater();
+        sheeriaPageHeaders();
+        sheeriaWorks();
+        sheeriaGallery();
 
         setTimeout(function () {
 
@@ -1490,5 +1642,173 @@
         }, 500)
 
     })
+
+    barba.init({
+        debug: true,
+        cacheIgnore: true,
+        transitions: [
+            {
+                name: 'default-transition',
+                leave() {
+
+                    return new Promise(function (resolve, reject) {
+
+                        if ($('.fullscreen-menu').hasClass('is-active')) {
+
+
+                            toggle.removeClass('is-active')
+                            fsAnim.reverse();
+
+                            toggle.data('clicks', false);
+
+                        }
+
+                        CustomEase.create("blockEase", ".25,.74,.22,.99");
+
+                        var overlay = $('.page-trans-overlay'),
+                            logo = $('.loading-logo');
+
+                        var transOut = gsap.timeline({
+                            yoyo: true,
+                            onStart: function () {
+
+                                gsap.set(overlay, {
+                                    bottom: 0,
+                                    top: 'unset'
+                                })
+
+                                gsap.set(logo, {
+
+                                    top: '75%'
+                                })
+                            },
+                            onComplete: function () {
+
+                                resolve();
+                            }
+                        });
+
+                        transOut.to(overlay, {
+                            height: '100%',
+                            stagger: 0.2,
+                            duration: 1,
+                            ease: 'blockEase',
+
+                        }, 0)
+                        transOut.to(logo, {
+                            opacity: 1,
+                            top: '50%',
+                            duration: .7,
+                            ease: 'power3.out'
+
+                        }, 0.6)
+
+
+
+                    })
+                },
+                enter() {
+
+                    return new Promise(function (resolve, reject) {
+                        var overlay = $('.page-trans-overlay'),
+                            logo = $('.loading-logo');
+
+                        var transIn = gsap.timeline({
+                            yoyo: true,
+                            onStart: function () {
+
+                                gsap.set(overlay, {
+                                    top: 0,
+                                    bottom: 'unset'
+                                })
+                                resolve();
+                            }
+                        });
+
+                        transIn.to(logo, {
+                            opacity: 0,
+                            top: '25%',
+                            ease: 'powwer3.in',
+                            duration: .7
+
+                        }, 0)
+
+                        transIn.to(overlay, {
+                            height: '0%',
+                            stagger: -0.2,
+                            duration: 1,
+                            ease: 'blockEase',
+
+                        }, 0.3)
+
+                    })
+
+
+                },
+
+        }]
+    })
+
+
+    barba.hooks.after((data) => {
+
+
+        let Alltrigger = ScrollTrigger.getAll()
+
+        for (let i = 0; i < Alltrigger.length; i++) {
+            Alltrigger[i].kill(true)
+        }
+        window.scrollTo(0, 0);
+
+
+
+        sheeriaScrollButton();
+
+        sheeriaPlayMusicButton();
+        sheeriaServices();
+
+        //        fullscrenMenu();
+        sheeriaCircularVideo();
+        sheeriaVisionObj();
+        sheeriaTextBox();
+
+        greekPage();
+        sheeriaContactForm();
+        sheeriaGreekTheater();
+        sheeriaPageHeaders();
+        sheeriaWorks();
+        sheeriaGallery();
+
+        setTimeout(function () {
+
+            sheeriaLanding();
+            sheeriaCharis();
+
+            sheeriaTeamCarousel();
+            sheeriaTextScrollAnimations();
+            sheeriaImageScrollAnimations();
+            sheeriaFooter();
+
+
+            ScrollTrigger.refresh(true);
+            ScrollTrigger.update(true);
+
+        }, 500)
+
+
+
+
+    })
+
+    barba.hooks.afterEnter((data) => {
+        var vids = document.querySelectorAll("video");
+        vids.forEach(vid => {
+            var playPromise = vid.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {}).catch(error => {});
+            };
+        });
+    })
+
 
 }(jQuery));

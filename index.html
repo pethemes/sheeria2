@@ -14,26 +14,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/swiper.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-<!--    <link href="css/rtl.css" rel="stylesheet">-->
+   <link href="css/rtl.css" rel="stylesheet">
     <!-- Favicons -->
     <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="apple-touch-icon" href="img/favicon.png" />
     <!--/ Favicons -->
 </head>
 
-<body>
+<body data-barba="wrapper">
 
     <!-- Header -->
     <div class="site-header">
         <!-- Site Branding -->
         <div class="site-branding">
-            <!-- Site Logo -->
-            <div class="site-logo">
-                <!-- Site Logo Img -->
-                <img src="img/site-logo.png">
-                <!--/ Site Logo Img  -->
-            </div>
-            <!--/Site Logo  -->
+            <a href="index.html">
+                <!-- Site Logo -->
+                <div class="site-logo">
+                    <!-- Site Logo Img -->
+                    <img src="img/site-logo.png">
+                    <!--/ Site Logo Img  -->
+                </div>
+                <!--/Site Logo  -->
+            </a>
         </div>
         <!--/ Site Branding -->
 
@@ -156,10 +158,10 @@
         </div>
         <!--/ Fullscreen Menu -->
 
-        <!-- Sheeria Intro -->
-        
-        <div class="sheeria-intro">
 
+
+
+        <div class="sheeria-intro">
 
             <div class="intro-logo">
 
@@ -174,16 +176,39 @@
             </div>
 
 
-           
+
             <div class="intro-video">
                 <video webkit-playsinline="" playsinline="" preload="metadata" loop="" autoplay="" muted="" src="img/intro.mp4">
                     <source src="img/intro.mp4" type="video/mp4" />
                 </video>
             </div>
-       
+
         </div>
 
-        <!-- Sheeria Intro -->
+
+
+
+
+        <div class="page-trans">
+
+            <div class="loading-logo">
+
+                <img src="img/site-logo.png">
+
+            </div>
+
+            <div class="page-trans-overlays">
+
+                <span class="page-trans-overlay"></span>
+                <span class="page-trans-overlay"></span>
+                <span class="page-trans-overlay"></span>
+
+
+            </div>
+
+
+        </div>
+
     </div>
     <!-- /Header -->
 
@@ -1105,6 +1130,7 @@
     <script src="js/jquery-ui.js"></script>
     <script src="js/gsap.js"></script>
     <script src="js/circletype.min.js"></script>
+    <script src="js/CustomEase.js"></script>
     <script src="js/DrawSVGPlugin.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/ScrollTrigger.js"></script>

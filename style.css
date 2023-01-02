@@ -1,9 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 
 /* Sheeria Group Website Production
    v1.0 
@@ -163,10 +157,10 @@ body {
 }
 
 h1.big-title {
-    font-size: 75px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 90px;
+    line-height: 75px;
     margin-left: -7px;
     margin-top: 20px;
     margin-bottom: 69px;
@@ -175,8 +169,8 @@ h1.big-title {
 
 
 h1 {
-    font-size: 48px;
-    line-height: 65px;
+    font-size: 44px;
+    line-height: 60px;
     font-weight: 700;
     margin-bottom: 15px
 }
@@ -205,8 +199,8 @@ h4 {
 }
 
 h5 {
-    font-size: 18px;
-    line-height: 35px;
+    font-size: 16px;
+    line-height: 32px;
     margin-left: -1px;
     font-weight: normal;
     margin-bottom: 1em;
@@ -379,7 +373,7 @@ button {
 .site-branding {
     display: block;
     float: left;
-    width: 50px;
+    width: 45px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -422,6 +416,7 @@ ul.menu.main-menu {
 ul.menu.main-menu li {
     display: inline-block;
     margin: 0 15px;
+    font-size: 14px;
 }
 
 ul.menu.main-menu li a {
@@ -437,6 +432,7 @@ ul.lang-switch {
 
 ul.lang-switch li {
     display: inline-block;
+    font-size: 14px;
 }
 
 ul.lang-switch li::after {
@@ -465,19 +461,64 @@ ul.lang-switch li.active a {
 }
 
 /*--------------------------------------------------
+## Page Transitions
+---------------------------------------------------*/
+
+.page-trans {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999999;
+    pointer-events: none
+}
+
+span.page-trans-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #fff;
+}
+
+span.page-trans-overlay:first-child {
+    background: #1BA2AD;
+}
+
+span.page-trans-overlay:nth-child(2) {
+    background: #21509F;
+}
+
+.loading-logo {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    z-index: 999;
+    opacity: 0
+}
+
+.loading-logo img {
+    width: 100%;
+}
+
+/*--------------------------------------------------
 ## Fullscreen Menu
 ---------------------------------------------------*/
 
 .hamburger-toggle {
     display: block;
-    width: 30px;
+    width: 25px;
     margin-top: 2px;
     cursor: pointer
 }
 
 .hamburger-toggle .toggle-line {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: #000;
     display: block;
     -webkit-transition: all .3s ease;
@@ -1083,6 +1124,19 @@ ul.menu.footer-menu li a {
 
 }
 
+.sheeria-page-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(100%);
+    height: 500px;
+    z-index: -1;
+    background: rgb(239, 238, 239);
+    background: linear-gradient(180deg, rgba(239, 238, 239, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 .page-header-bg video {
     width: 100%;
     height: 100%;
@@ -1280,7 +1334,7 @@ ul.menu.footer-menu li a {
 }
 
 .greek-content .text-wrapper {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
 
 .greek-button {
@@ -1821,33 +1875,33 @@ section:after {
 
 @media only screen and (min-width: 992px) {
     .wrapper {
-        max-width: 1014px;
+        max-width: 914px;
     }
 
     .wrapper-small {
-        max-width: 790px;
+        max-width: 700px;
     }
 
 }
 
 @media only screen and (min-width: 1200px) {
     .wrapper {
-        max-width: 1274px;
+        max-width: 1174px;
     }
 
     .wrapper-small {
-        max-width: 950px;
+        max-width: 850px;
     }
 
 }
 
 @media only screen and (min-width: 1600px) {
     .wrapper {
-        max-width: 1500px;
+        max-width: 1350px;
     }
 
     .wrapper-small {
-        max-width: 1200px;
+        max-width: 1100px;
     }
 
 }
@@ -2132,6 +2186,7 @@ span.mi-dot {
     fill: #1A98A3;
 }
 
+
 .services-link {
     position: fixed;
     z-index: 2;
@@ -2330,13 +2385,13 @@ span.mi-dot {
 .s-button {
     display: inline-block;
     position: relative;
+    border: 1px solid #74BCC3;
+    border-radius: 35px;
 }
 
 .s-button a {
-    display: block;
-    float: left;
-    padding: 10px 40px 10px 15px;
-    border: 1px solid #74BCC3;
+    display: inline-block;
+    padding: 10px 40px 10px 25px;
     border-radius: 35px;
     text-decoration: none;
     color: #000;
@@ -2347,19 +2402,15 @@ span.mi-dot {
     content: "\f178";
     font-family: 'Font Awesome 6 Free';
     font-weight: 600;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    -webkit-transform: translateY(-50%) translateX(15px) rotate(-45deg);
-    -ms-transform: translateY(-50%) translateX(15px) rotate(-45deg);
-    transform: translateY(-50%) translateX(15px) rotate(-45deg);
     color: #74BCC3;
     background: #fff;
     padding: 15px;
     border-radius: 50%;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease
+    transition: all .3s ease;
+    display: inline-block;
+    margin: 5px;
 }
 
 .s-button:hover::after {
@@ -2382,33 +2433,54 @@ span.mi-dot {
     display: block;
     width: 100%;
     background: #21509F;
-    margin-top: 100px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
     padding: 5%;
     box-sizing: border-box;
     color: #fff;
     overflow: hidden;
     background-image: url(img/gh-bg.png);
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: right bottom;
+    padding-top: 160px;
 }
 
 .greek-head::before {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
+    top: -5%;
     left: 0;
     background-image: url(img/greek-light.png);
     background-repeat: no-repeat;
     width: 40%;
     height: 100%;
     background-size: 100%;
+    background-size: 100%;
+    transform: rotate(20deg);
+    transform-origin: top;
+    animation-name: lightAnim;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes lightAnim {
+    0% {
+        transform: rotate(20deg);
+
+    }
+
+    50% {
+        transform: rotate(-20deg);
+
+    }
+
+    100% {
+        transform: rotate(20deg);
+
+    }
 }
 
 .greek-head .page-title::before {
-    content: url(img/page-title-shine-light.png);
+    display: none
 }
 
 .greek-head .page-title {
@@ -2453,6 +2525,22 @@ span.mi-dot {
     width: 48%;
 }
 
+.tgt-logo {
+    display: inline-block;
+    width: 130px;
+    margin-bottom: 25px;
+    opacity: 0;
+
+}
+
+.tgt-logo img {
+    width: 100%;
+}
+
+.gh-image-right {
+    transform: translateY(-20%)
+}
+
 /*--------------------------------------------------
 ## Works Grid
 ---------------------------------------------------*/
@@ -2461,7 +2549,6 @@ span.mi-dot {
     display: block;
     float: left;
     width: 100%;
-    padding: 0 5%;
     box-sizing: border-box
 }
 
@@ -2549,6 +2636,7 @@ span.mi-dot {
     background: #ebebeb;
     box-sizing: border-box;
     margin-bottom: 3%;
+    height: 500px
 }
 
 .sheeria-gallery .gallery-item img,
@@ -2561,6 +2649,80 @@ span.mi-dot {
 
 .gallery-item.vid {
     width: 63%;
+}
+
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0 0 0 / 80%);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, visibility .4s ease;
+}
+
+.gallery-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all
+}
+
+.gallery-lightbox .gallery-item video,
+.gallery-lightbox .gallery-item img {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    height: auto;
+    transition: all .6s ease;
+}
+
+.gallery-lightbox.is-open .gallery-item video,
+.gallery-lightbox.is-open .gallery-item img {
+
+    transform: translate(-50%, -50%);
+}
+
+.gallery-lightbox .gallery-item {
+    padding: 0;
+    background: none;
+    margin: 0;
+    height: unset;
+    margin: 0;
+}
+
+.s-slide-next,
+.s-slide-prev {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 3
+}
+
+.s-gallery-close {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 3
+}
+
+.s-slide-prev {
+    left: 50px;
+}
+
+.s-slide-next {
+    right: 50px;
 }
 
 /*--------------------------------------------------
@@ -2702,7 +2864,7 @@ span.mi-dot {
 
 #scroll-button-text {
     letter-spacing: 1px;
-    font-size: 8px;
+    font-size: 7px;
     width: 100%;
     color: #21509F;
     font-weight: 700;
@@ -2721,6 +2883,15 @@ span.mi-dot {
     opacity: 0;
 }
 
+.scroll-button.active .scroll-button-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.scroll-button.active #scroll-button-text {
+    opacity: 1
+}
+
 .scroll-button-icon::after {
     content: "";
     display: block;
@@ -2731,8 +2902,8 @@ span.mi-dot {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background: #F2F2F2;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     z-index: -1;
     border: 1px solid #1BA2AD;
@@ -2740,6 +2911,10 @@ span.mi-dot {
     -webkit-transition: all .6s ease;
     -o-transition: all .6s ease;
     transition: all .6s ease
+}
+
+.scroll-button.active .scroll-button-icon::after {
+    opacity: 1
 }
 
 .scroll-button-icon.in-view::after {
@@ -3076,7 +3251,7 @@ span.mi-dot {
 
 .team-wrapper .sheeria-page-nav {
     margin-left: 130px;
-    top: 50%;
+    top: 0;
     -webkit-transform: translateY(30%);
     -ms-transform: translateY(30%);
     transform: translateY(30%);
@@ -3146,6 +3321,14 @@ span.mi-dot {
     color: #000
 }
 
+.has-anim {
+    opacity: 0
+}
+
+img.has-anim {
+    opacity: 1
+}
+
 
 /*--------------------------------------------------
 # Text Scroll Animations
@@ -3169,28 +3352,76 @@ span.mi-dot {
 -------------------------------------------------------------------**/
 
 @media only screen and (max-width: 450px) {
-    
+
+    .s-button a {
+        padding: 10px 20px;
+    }
+
+    .mi-bg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #21509f;
+        bottom: 0;
+        transform: translateY(50%) scaleY(5);
+        transform-origin: top;
+    }
+
+    .mi-bg:nth-child(even)::after {
+        background: #1A98A3;
+    }
+
+    .mi-bg.index_0 {
+
+        transform: translateX(-50%) translateY(-50%) scale(0.3);
+    }
+
+
+    .intro-logo {
+        width: 100px;
+    }
+
+    .intro-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        bottom: 30%
+    }
+
+    .gallery-lightbox .gallery-item video,
+    .gallery-lightbox .gallery-item img {
+        width: 90%;
+    }
+
+    .s-slide-next {
+        right: 30px;
+    }
+
+    .s-slide-prev {
+        left: 30px;
+    }
+
     .greek-head {
-    background-image: none;
-    padding-top: 15%;
-}
+        background-image: none;
+        padding-top: 150px;
+    }
 
-.greek-desc br {
-    display: none;
-}
+    .greek-desc br {
+        display: none;
+    }
 
-.gh-image {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 50px;
-}
+    .gh-image {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 50px;
+    }
 
-.greek-head::before {
-    left: 50%;
-    top: 0;
-    width: 100%;
-    transform: translateX(-50%);
-}
+    .greek-head::before {
+        left: 0;
+        top: -5%;
+        width: 100%;
+    }
 
     .project-detail {
         margin-bottom: 50px;
@@ -3605,8 +3836,8 @@ span.mi-dot {
     }
 
     .greek-content h2 {
-        font-size: 40px;
-        line-height: 50px;
+        font-size: 35px;
+        line-height: 45px;
     }
 
     p.g-text {
@@ -3706,7 +3937,7 @@ span.mi-dot {
     }
 
     .greek-logo {
-        width: 35%;
+        width: 25%;
         margin-top: 50px;
     }
 

@@ -328,3 +328,52 @@ section:after {
     overflow: hidden;
 
 }
+
+.sheeria-title::before {
+    right: 0;
+    left: unset;
+}
+
+.sheeria-title.is-inview::before {
+    transform: translate(150%, 0);
+}
+
+.services-fraction {
+    float: right;
+}
+
+.single-image.align-right {
+    text-align: left;
+}
+
+.footer-headline::after {
+    right: unset;
+    left: 100px;
+    transform: rotate(-90deg);
+}
+
+.footer-headline.is-inview::after {
+    left: 0;
+    right: unset;
+}
+
+.fullscreen-menu-wrap {
+    float: right;
+}
+
+.fullscreen-menu-wrap::after,
+.fullscreen-cta::after,
+.fullscreen-widget::after {
+    left: unset;
+    right: 0;
+}
+
+.greek-head::before {
+    right: 0;
+    left: unset;
+}
+
+.greek-head {
+    background-position: left bottom;
+    background-image: url(img/gh-bg-rtl.png);
+}
